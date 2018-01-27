@@ -19,7 +19,7 @@ public class SurvivorCameraFollow : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        controller = GameObject.Find("GameController").GetComponent<SurvivorController>();
+        controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<SurvivorController>();
 	}
 
     void Start()

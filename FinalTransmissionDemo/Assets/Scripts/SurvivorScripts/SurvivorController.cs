@@ -102,15 +102,15 @@ public class SurvivorController : MonoBehaviour {
             selectedMotor.movementDirection = Input.GetAxis("Horizontal") * screenMovementRight
                 + Input.GetAxis("Vertical") * screenMovementForward;
 
-            if (Input.GetAxis(Axis_X) != 0 || Input.GetAxis(Axis_Y) != 0)
-            {
-                anim.SetBool("IsWalking", true);
-            }
-            else
-            {
-                anim.SetBool("IsWalking", false);
+            //if (Input.GetAxis(Axis_X) != 0 || Input.GetAxis(Axis_Y) != 0)
+            //{
+            //    anim.SetBool("IsWalking", true);
+            //}
+            //else
+            //{
+            //    anim.SetBool("IsWalking", false);
 
-            }
+            //}
            
 
         }

@@ -1233,8 +1233,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1245107422138910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 356.49625, y: -156.91, z: 253.74048}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalPosition: {x: 137, y: 39.79125, z: 134.6}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4466604444468974}
   - {fileID: 4943637128239968}
@@ -2262,6 +2262,7 @@ MonoBehaviour:
   survivorPrefab: {fileID: 1245107422138910}
   SurvivorName: 
   SurvivorAge: 
+  SurvivorID: 0
   Stats: {fileID: 0}
   SurvivorTraits: []
 --- !u!136 &136385003838192088

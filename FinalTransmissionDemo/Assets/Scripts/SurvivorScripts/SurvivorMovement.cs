@@ -34,7 +34,7 @@ public class SurvivorMovement : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         survivorBody = gameObject.GetComponent<Rigidbody>();
-        controller = GameObject.Find("GameController").GetComponent<SurvivorController>();
+        controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<SurvivorController>();
     }
 
     // Update is called once per frame

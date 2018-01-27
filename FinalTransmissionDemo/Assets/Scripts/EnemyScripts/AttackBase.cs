@@ -37,32 +37,32 @@ public class AttackBase : MonoBehaviour {
         switch (aggressionLevel)
         {
             case 0:
-                enemyNo = 7;
+                enemyNo = 4;
                 GenerateAttackGroup(enemyNo, LevelAggression);
                 Debug.Log(enemyNo);
                 break;
 
 
             case 1:
-                enemyNo = Random.Range(8, 12);
+                enemyNo = Random.Range(4, 7);
                 GenerateAttackGroup(enemyNo, LevelAggression);
                 Debug.Log(enemyNo);
                 break;
 
             case 2:
-                enemyNo = Random.Range(13, 17);
+                enemyNo = Random.Range(6, 10);
                 GenerateAttackGroup(enemyNo, LevelAggression);
                 Debug.Log(enemyNo);
                 break;
 
             case 3:
-                enemyNo = Random.Range(18, 20);
+                enemyNo = Random.Range(9, 12);
                 GenerateAttackGroup(enemyNo, LevelAggression);
                 Debug.Log(enemyNo);
                 break;
 
             case 4:
-                enemyNo = Random.Range(20, 30);
+                enemyNo = Random.Range(11, 14);
                 GenerateAttackGroup(enemyNo, LevelAggression);
                 Debug.Log(enemyNo);
                 break;
