@@ -5,10 +5,17 @@ using UnityEngine.UI;
 
 public class DayTime : MonoBehaviour {
 
+    //Note this script requires AttackBase Script
+
+
+    [SerializeField]
+    private AttackBase attackBase;
+
+
     private Text DayCount;
     private float lastChange;
     private float day = 1;
-    private float hour = 7;
+    public float hour = 7;
     private int enableValue = 0;
 
     private string ampm = "am";
@@ -22,7 +29,7 @@ public class DayTime : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        timeText.text = "Day: " + day.ToString() + "  " + hour.ToString() + " " + ampm;
+  //      timeText.text = "Day: " + day.ToString() + "  " + hour.ToString() + " " + ampm;
     }
 
     // Update is called once per frame
@@ -33,9 +40,8 @@ public class DayTime : MonoBehaviour {
         {
             hour++;
 
+          
 
-            CheckForHourEvent();
-           
             // prevents it from repeating
             if (hour == 12)
             {
@@ -47,7 +53,7 @@ public class DayTime : MonoBehaviour {
                 hour = 0;
                 ampm = "AM";
             }
-            timeText.text = "Day: " + day.ToString() + "  " + hour.ToString() + " " + ampm;
+        //    timeText.text = "Day: " + day.ToString() + "  " + hour.ToString() + " " + ampm;
 
             lastChange = Time.time;
         }//end if
@@ -58,7 +64,7 @@ public class DayTime : MonoBehaviour {
         }
         if (hour == 7)
         {
-            enableValue = 0;
+            enableValue = 0; // reset method call so it can be recalled the folow day
 
         }
 
@@ -69,29 +75,16 @@ public class DayTime : MonoBehaviour {
 
     void NewDay()
     {
-        enableValue = 1;
+        enableValue = 1; // quickly resets to stop constant Method Calling
+        attackBase.AttackChance += 3;
+        attackBase.CalculateAttackChance(); // Determines if attack happens that day
+        Debug.Log("New Day");
+
+        //deducte resources
 
     }
 
-    public void CheckForHourEvent()
-    {
-        //Calculate Events and enable them
-        if (baseAttack == true)
-        {
-
-
-            baseAttack = false;
-        }
-
-        if (baseTrader == true)
-        {
-            //Call Create Trader Method
-
-
-            baseTrader = false;
-        }
-
-    }
+    
 
 
 }//endclass

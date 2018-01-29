@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53832ca562b85ce45843a9d0eb280ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeChange: 2
+  timeChange: 180
   timeText: {fileID: 1153059205}
   baseAttack: 0
   baseTrader: 0
