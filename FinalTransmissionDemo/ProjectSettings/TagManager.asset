@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wall
   - NPC
+  - MinimapCamera
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Enemy
   - Survivor
   - MinimapOnly
-  - 
+  - MapBoundaries
   - 
   - 
   - 

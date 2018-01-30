@@ -16,7 +16,8 @@ public class SurvivorController : MonoBehaviour {
     [SerializeField]
     private GameObject spawnPoint;
 
-   
+    [SerializeField]
+    private Camera minimapCamera;
 
     private Quaternion screenMovementSpace;
     private Vector3 screenMovementForward;
@@ -102,6 +103,12 @@ public class SurvivorController : MonoBehaviour {
             selectedMotor.movementDirection = Input.GetAxis("Horizontal") * screenMovementRight
                 + Input.GetAxis("Vertical") * screenMovementForward;
 
+
+            minimapCamera.transform.position =
+                new Vector3(selectedSurvivor.transform.position.x,
+                100,
+                selectedSurvivor.transform.position.z);
+
             //if (Input.GetAxis(Axis_X) != 0 || Input.GetAxis(Axis_Y) != 0)
             //{
             //    anim.SetBool("IsWalking", true);
@@ -111,7 +118,7 @@ public class SurvivorController : MonoBehaviour {
             //    anim.SetBool("IsWalking", false);
 
             //}
-           
+
 
         }
       
