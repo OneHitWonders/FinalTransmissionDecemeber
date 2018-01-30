@@ -11,8 +11,11 @@ public class AttackBase : MonoBehaviour {
 
     public int enemyNo;
     public int AttackChance = 5;
+
+    //used for spawning
     private bool attackingcoming = false;
     public float hrOfDay = 0;
+
 
     int LevelAggression =0;
 
@@ -26,7 +29,7 @@ public class AttackBase : MonoBehaviour {
         if ((tempGen + AttackChance) >= 80)
         {
             Debug.Log("Successful");
-
+            attackingcoming = true;
             hrOfDay = Random.Range(13,18);
         }
 
@@ -34,11 +37,13 @@ public class AttackBase : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (hrOfDay == daytime.hour)
+        if ((hrOfDay == daytime.hour) && attackingcoming ==true)
         {
             Debug.Log("Spawning Beginning");
             DetermineAttack();
             AttackChance = 0; // reset after wave spawn begins
+            hrOfDay = 0;
+            attackingcoming = false;
         }
     }
 

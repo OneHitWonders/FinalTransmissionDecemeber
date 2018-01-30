@@ -29,6 +29,8 @@ public class BaseTabButtons : MonoBehaviour {
       RadioTabWindow.gameObject.SetActive(false); 
       MissonsTabWindow.gameObject.SetActive(false); 
 }
+
+
     public void OpenPanelsurvivorTab()
     {
 

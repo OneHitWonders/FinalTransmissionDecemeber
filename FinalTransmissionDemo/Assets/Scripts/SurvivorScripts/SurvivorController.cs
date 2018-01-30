@@ -119,6 +119,7 @@ public class SurvivorController : MonoBehaviour {
 
     }
 
+    //For when a new survivor comes to join or is generated in Demo
     public void GenerateNewSurvivor()
     {
         GameObject tempGO = survivorPrefabTemp; 
