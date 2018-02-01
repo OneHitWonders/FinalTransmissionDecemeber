@@ -9,7 +9,7 @@ public class DayTime : MonoBehaviour {
 
 
     [SerializeField]
-    private AttackBase attackBase;
+    private BaseEvents baseevents;
 
 
     public Text DayText;
@@ -44,14 +44,13 @@ public class DayTime : MonoBehaviour {
         if ((Time.time - lastChange) > timeChange)
         {
             hour++;
-
-          
-
-            // prevents it from repeating
+            // changes to PM
             if (hour == 12)
             {
                 ampm = "PM";
             }
+
+            //Changes to Am and resets clock
             if (hour == 24)
             {
                 day++;
@@ -59,11 +58,11 @@ public class DayTime : MonoBehaviour {
                 ampm = "AM";
                 DayText.text = "Day: " + day.ToString();
             }
-        //    timeText.text = "Day: " + day.ToString() + "  " + hour.ToString() + " " + ampm;
-
-            lastChange = Time.time;
+            lastChange = Time.time; // Updated each frame, current time
         }//end if
 
+
+        //Used to determine if a new day or not
         if (hour == 6 && enableValue == 0)
         {
             NewDay();
@@ -71,19 +70,17 @@ public class DayTime : MonoBehaviour {
         if (hour == 7)
         {
             enableValue = 0; // reset method call so it can be recalled the folow day
-
         }
         HourText.text = hour.ToString() + ampm;
 
-
-    }
+    }//end Update
 
 
     void NewDay()
     {
         enableValue = 1; // quickly resets to stop constant Method Calling
-        attackBase.AttackChance += 3;
-        attackBase.CalculateAttackChance(); // Determines if attack happens that day
+        baseevents.AttackChance += 5;
+        baseevents.GenerateChanceOfEvent(); // Determines if attack happens that day
         Debug.Log("New Day");
 
         //deducte resources

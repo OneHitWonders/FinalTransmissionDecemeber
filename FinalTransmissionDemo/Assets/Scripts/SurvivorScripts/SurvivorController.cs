@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class SurvivorController : MonoBehaviour {
 
@@ -8,6 +10,7 @@ public class SurvivorController : MonoBehaviour {
     public LinkedList<GameObject> listOfSurvivors = new LinkedList<GameObject>();
     public GameObject selectedSurvivor;
     private SurvivorMovement selectedMotor; // Used to move the current select
+    private Survivor SurvivorDetails;
     private string IsWalking;
 
 
@@ -26,21 +29,22 @@ public class SurvivorController : MonoBehaviour {
     private string Axis_X = "Horizontal";
 
 
+    //UI elements
+    public Image selectSurvivorImage;
+    public Text selectSurvivorName;
+    public Text selectSurvivorHealth;
+    public Text selectSurvivorStaminia;
+    public Text selectSurvivorAccuracy;
+
+
+
+
+
+
     // Use this for initialization
     void Awake () {
 
-        
-        foreach (GameObject item in GameObject.FindGameObjectsWithTag("Survivor"))
-        {
-            AddSurvivor(item);
-            if (selectedSurvivor == null)
-            {
-                selectedSurvivor = item;
-                selectedMotor = selectedSurvivor.GetComponent<SurvivorMovement>();
-
-            }
-
-        }
+       
         
 	}
 
@@ -59,6 +63,18 @@ public class SurvivorController : MonoBehaviour {
         //moving left or right on the x axis
         screenMovementRight = screenMovementSpace * Vector3.right;
 
+
+        foreach (GameObject item in GameObject.FindGameObjectsWithTag("Survivor"))
+        {
+            AddSurvivor(item);
+            if (selectedSurvivor == null)
+            {
+                selectedSurvivor = item;
+                selectedMotor = selectedSurvivor.GetComponent<SurvivorMovement>();
+                SurvivorDetails = selectedSurvivor.GetComponent<Survivor>();
+            }
+
+        }
     }
 
 
@@ -91,8 +107,12 @@ public class SurvivorController : MonoBehaviour {
                 {
                     selectedSurvivor = hit.transform.gameObject; // gets the hit Gameobject and sets as selected
                     selectedMotor = selectedSurvivor.GetComponent<SurvivorMovement>();
+                    SurvivorDetails = selectedSurvivor.GetComponent<Survivor>();
+
                     selectedSurvivor.GetComponent<SurvivorMovement>().isSelected = true;
                     Debug.Log("select");
+                    UpdateUIInfo();
+                    
                 }
             }
         }
@@ -125,6 +145,16 @@ public class SurvivorController : MonoBehaviour {
 
 
     }
+
+
+    public void UpdateUIInfo()
+    {
+     
+      selectSurvivorName.text = "Name: " + SurvivorDetails.SurvivorName;
+      selectSurvivorHealth.text = "Health: " + SurvivorDetails.Health.ToString();
+      selectSurvivorStaminia.text = "Stamina: " + SurvivorDetails.Stamina.ToString();
+      selectSurvivorAccuracy.text = "Accuracy: " + SurvivorDetails.Accuracy.ToString();
+}
 
     //For when a new survivor comes to join or is generated in Demo
     public void GenerateNewSurvivor()

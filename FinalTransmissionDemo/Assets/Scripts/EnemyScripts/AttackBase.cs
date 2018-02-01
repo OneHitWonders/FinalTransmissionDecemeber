@@ -13,7 +13,8 @@ public class AttackBase : MonoBehaviour {
     public int AttackChance = 5;
 
     //used for spawning
-    private bool attackingcoming = false;
+    [HideInInspector]
+    public bool attackingcoming = false;
     public float hrOfDay = 0;
 
 

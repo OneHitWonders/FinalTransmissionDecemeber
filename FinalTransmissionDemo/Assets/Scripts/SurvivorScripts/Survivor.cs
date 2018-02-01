@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Survivor : MonoBehaviour {
 
-    [SerializeField]
-    private GameObject survivorPrefab;
+   
     public string SurvivorName;
     public string SurvivorAge;
     public int SurvivorID;
@@ -15,18 +14,22 @@ public class Survivor : MonoBehaviour {
     public List<Trait> SurvivorTraits = new List<Trait>();
 
 
+    public float Health = 100;
+    public float Stamina = 100;
+    public float Strength = 100;
+    public float Accuracy = 100;
+    public float FoodConsumptionAmount = 10;
+
+
+
     // Use this for initialization
     void Awake()
     {
         //Stats.Traits = SurvivorTraits;
         NewSurvivorGenerated();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
+    //Used to determine stats and traits
 
     public void NewSurvivorGenerated()
     {
