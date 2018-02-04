@@ -2262,8 +2262,14 @@ MonoBehaviour:
   survivorPrefab: {fileID: 1245107422138910}
   SurvivorName: 
   SurvivorAge: 
+  SurvivorID: 0
   Stats: {fileID: 0}
   SurvivorTraits: []
+  bulletPrefab: {fileID: 1299413360933826, guid: 414b650ca6111334b86ec211f6fae730,
+    type: 2}
+  bulletSpawn: {fileID: 0}
+  health: 100
+  ammoCount: 20
 --- !u!136 &136385003838192088
 CapsuleCollider:
   m_ObjectHideFlags: 1

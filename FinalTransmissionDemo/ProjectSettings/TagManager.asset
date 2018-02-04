@@ -8,6 +8,11 @@ TagManager:
   - Enemy
   - Wall
   - NPC
+  - EnemyShell
+  - EnemyBullet
+  - shell
+  - Bullet
+  - Node
   layers:
   - Default
   - TransparentFX

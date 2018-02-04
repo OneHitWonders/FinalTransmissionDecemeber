@@ -14,6 +14,11 @@ public class Survivor : MonoBehaviour {
     public SurvivorStats Stats;
     public List<Trait> SurvivorTraits = new List<Trait>();
 
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+    public int health = 100;
+    public int ammoCount = 20;
+
 
     // Use this for initialization
     void Awake()
@@ -25,7 +30,43 @@ public class Survivor : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (ammoCount >= 1)
+            {
+                Fire();
+                ammoCount--;
+            }
 
+        }
+    }
+
+    public void Fire()
+    {
+        // Will create the bullet
+        var bullet = (GameObject)Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100;
+
+        // Destroys the bullet after two seconds
+        Destroy(bullet, 2.0f);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.tag == "EnemyShell")
+        {
+            health = health - 10;
+        }
+
+        if (other.gameObject.tag == "Enemy")
+        {        
+            health = health - (Random.Range(3, 9));
+        }
     }
 
     public void NewSurvivorGenerated()
