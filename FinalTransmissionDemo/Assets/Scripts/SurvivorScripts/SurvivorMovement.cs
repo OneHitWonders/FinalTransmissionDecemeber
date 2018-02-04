@@ -8,6 +8,7 @@ public class SurvivorMovement : MonoBehaviour {
     public Rigidbody survivorBody;
     public SurvivorController controller;
 
+    public bool Testing = false;
 
     #region Movement
     //MovementVariables
@@ -70,11 +71,15 @@ public class SurvivorMovement : MonoBehaviour {
 
         }
 
-        if ((controller.selectedSurvivor != gameObject) && (isSelected == true) )
+        if (Testing == false)
         {
-            isSelected = false;
-            Debug.Log("no longer true");
+            if ((controller.selectedSurvivor != gameObject) && (isSelected == true))
+            {
+                isSelected = false;
+                Debug.Log("no longer true");
+            }
         }
+     
        
 
     }

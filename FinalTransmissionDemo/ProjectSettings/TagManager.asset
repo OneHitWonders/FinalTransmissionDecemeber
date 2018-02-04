@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - NPC
   - MinimapCamera
+  - SceneController
+  - House
   layers:
   - Default
   - TransparentFX
