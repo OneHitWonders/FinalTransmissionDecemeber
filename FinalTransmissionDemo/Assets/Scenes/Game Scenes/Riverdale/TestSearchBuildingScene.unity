@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 105636485}
   - component: {fileID: 105636484}
   - component: {fileID: 105636488}
+  - component: {fileID: 105636489}
   m_Layer: 0
   m_Name: tempHouse
   m_TagString: House
@@ -209,7 +210,92 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 1, y: 0, z: 0}
+  m_Center: {x: 0.74, y: -0.18, z: 0}
+--- !u!114 &105636489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 105636483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4009506368a1248836512b8cb1581e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuildingSize: 1
+--- !u!1 &439888551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 439888555}
+  - component: {fileID: 439888554}
+  - component: {fileID: 439888553}
+  m_Layer: 0
+  m_Name: miniMapCamera
+  m_TagString: MinimapCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!124 &439888553
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 439888551}
+  m_Enabled: 1
+--- !u!20 &439888554
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 439888551}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 60
+  m_Depth: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 6417
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: 5f8be62fa2052e74a9ebaaff32f002ec, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &439888555
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 439888551}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -18.375, y: 367, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &504414127
 Prefab:
   m_ObjectHideFlags: 0
@@ -252,6 +338,11 @@ Prefab:
     - target: {fileID: 114142454530759048, guid: 20e3c7938e4cf5e4786092e8c1e44057,
         type: 2}
       propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114142454530759048, guid: 20e3c7938e4cf5e4786092e8c1e44057,
+        type: 2}
+      propertyPath: Testing
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -415,8 +506,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1254106350}
-  m_LocalRotation: {x: -0.09774568, y: 0.90217847, z: -0.30478933, w: -0.2891769}
-  m_LocalPosition: {x: 10.168279, y: 14.342568, z: 4.2331343}
+  m_LocalRotation: {x: -0.045847956, y: 0.94689935, z: -0.15650386, w: -0.27710316}
+  m_LocalPosition: {x: 26.656403, y: 38.289825, z: 71.35267}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -495,9 +586,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1904019164}
+  - component: {fileID: 1904019165}
+  - component: {fileID: 1904019166}
+  - component: {fileID: 1904019167}
   m_Layer: 0
   m_Name: SceneController
-  m_TagString: GameController
+  m_TagString: SceneController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -515,3 +609,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1904019165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904019163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af336024300cbc4992cc0093371094c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedSurvivor: {fileID: 0}
+  survivorPrefabTemp: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  minimapCamera: {fileID: 0}
+  selectSurvivorImage: {fileID: 0}
+  selectSurvivorName: {fileID: 0}
+  selectSurvivorHealth: {fileID: 0}
+  selectSurvivorStaminia: {fileID: 0}
+  selectSurvivorAccuracy: {fileID: 0}
+--- !u!114 &1904019166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904019163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53832ca562b85ce45843a9d0eb280ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseevents: {fileID: 0}
+  DayText: {fileID: 0}
+  HourText: {fileID: 0}
+  day: 1
+  hour: 7
+  timeChange: 5
+  timeText: {fileID: 0}
+  baseAttack: 0
+  baseTrader: 0
+--- !u!114 &1904019167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904019163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e69590f500c2e4f8ffc0842f3f3ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodCollected: 0
+  waterCollected: 0
+  woodCollected: 0
+  metalCollected: 0
+  medsCollected: 0
+  ammoCollected: 0
+  moneyCollected: 0
