@@ -572,7 +572,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &258634415
 Prefab:
@@ -619,7 +619,7 @@ Prefab:
     - target: {fileID: 224705113889858958, guid: c2de98baa6c207f498848286e564a0ff,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224705113889858958, guid: c2de98baa6c207f498848286e564a0ff,
         type: 2}
@@ -717,14 +717,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 267251608}
-  - component: {fileID: 267251609}
-  - component: {fileID: 267251611}
   - component: {fileID: 267251612}
   - component: {fileID: 267251610}
   - component: {fileID: 267251613}
   m_Layer: 0
   m_Name: SceneController
-  m_TagString: GameController
+  m_TagString: SceneController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -742,26 +740,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &267251609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 267251607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6af336024300cbc4992cc0093371094c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedSurvivor: {fileID: 0}
-  survivorPrefabTemp: {fileID: 0}
-  spawnPoint: {fileID: 429163878}
-  minimapCamera: {fileID: 1536634147}
-  selectSurvivorImage: {fileID: 1572625257}
-  selectSurvivorName: {fileID: 282827392}
-  selectSurvivorHealth: {fileID: 1585732083}
-  selectSurvivorStaminia: {fileID: 1009635548}
-  selectSurvivorAccuracy: {fileID: 316116183}
 --- !u!114 &267251610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,27 +758,6 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1857951344632244, guid: d88d01c317c6c6f4d9873754249fec8d,
     type: 2}
   initialSpawnPoint: {fileID: 429163878}
---- !u!114 &267251611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 267251607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53832ca562b85ce45843a9d0eb280ab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseevents: {fileID: 0}
-  DayText: {fileID: 2072237015}
-  HourText: {fileID: 1494583220}
-  newDayHour: 8
-  day: 1
-  hour: 12
-  timeChange: 30
-  timeText: {fileID: 0}
-  baseAttack: 0
-  baseTrader: 0
 --- !u!114 &267251612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1245,7 +1202,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &450450354
 Prefab:
@@ -2173,6 +2130,106 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ce05f42595f8674db080ae3f9a87b9c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &817760950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 817760953}
+  - component: {fileID: 817760952}
+  - component: {fileID: 817760951}
+  - component: {fileID: 817760954}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &817760951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817760950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53832ca562b85ce45843a9d0eb280ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseevents: {fileID: 0}
+  DayText: {fileID: 2072237015}
+  HourText: {fileID: 1494583220}
+  newDayHour: 8
+  day: 1
+  hour: 12
+  timeChange: 30
+  timeText: {fileID: 0}
+  baseAttack: 0
+  baseTrader: 0
+--- !u!114 &817760952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817760950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af336024300cbc4992cc0093371094c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedSurvivor: {fileID: 0}
+  survivorPrefabTemp: {fileID: 1245107422138910, guid: 20e3c7938e4cf5e4786092e8c1e44057,
+    type: 2}
+  spawnPoint: {fileID: 429163878}
+  minimapCamera: {fileID: 1536634147}
+  selectSurvivorImage: {fileID: 1572625257}
+  selectSurvivorName: {fileID: 282827392}
+  selectSurvivorHealth: {fileID: 1585732083}
+  selectSurvivorStaminia: {fileID: 1009635548}
+  selectSurvivorAccuracy: {fileID: 316116183}
+--- !u!4 &817760953
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817760950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 370.07413, y: -0.8764076, z: 428.75876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &817760954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817760950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe71a232eb16dd540a7c5db4444e2141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Food: 0
+  foodText: {fileID: 0}
+  Water: 0
+  waterText: {fileID: 0}
+  Wood: 0
+  woodText: {fileID: 0}
+  Metal: 0
+  metalText: {fileID: 0}
+  Medicine: 0
+  medicineText: {fileID: 0}
+  Happiness: 0
+  happinessText: {fileID: 0}
+  Ammo: 0
+  ammoText: {fileID: 0}
+  Money: 0
+  moneyText: {fileID: 0}
 --- !u!1001 &846384595
 Prefab:
   m_ObjectHideFlags: 0
@@ -2552,7 +2609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1111322908
 Prefab:
@@ -3248,7 +3305,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
 --- !u!114 &1572625257 stripped
 MonoBehaviour:
@@ -3762,7 +3819,7 @@ Transform:
   - {fileID: 1168617510}
   - {fileID: 335143776}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1851125101
 GameObject:

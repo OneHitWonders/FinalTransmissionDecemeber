@@ -2,30 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DayTime : MonoBehaviour {
 
     //Note this script requires AttackBase Script
 
-
+    #region BaseSceneSpecific
+    Scene currentScene;
     [SerializeField]
     private BaseEvents baseevents;
+
+    #endregion
 
 
     public Text DayText;
     public Text HourText;
 
     [SerializeField]
-    private float newDayHour;
+    private float newDayHour; // Hour a newDay Starts
 
     private float lastChange; //Used to compare time to determine if an hour passed
     public float day = 1;
     public float hour = 12;
     private int enableValue = 0;
-
     private string ampm = "PM";
-
     public float timeChange = 30; //  seconds before hour changes
+
     public Text timeText;
 
     public bool baseAttack = false;
@@ -37,6 +40,7 @@ public class DayTime : MonoBehaviour {
         //      timeText.text = "Day: " + day.ToString() + "  " + hour.ToString() + " " + ampm;
         DayText.text = "Day: " + day.ToString();
         HourText.text = hour.ToString() +ampm;
+        currentScene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -81,8 +85,12 @@ public class DayTime : MonoBehaviour {
     void NewDay()
     {
         enableValue = 1; // quickly resets to stop constant Method Calling
-        baseevents.AttackChance += 5;
-        baseevents.GenerateChanceOfEvent(); // Determines if attack happens that day
+        if (currentScene.name == "BaseScene")
+        {
+            baseevents.AttackChance += 5;
+            baseevents.GenerateChanceOfEvent(); // Determines if attack happens that day
+
+        }
         Debug.Log("New Day");
 
         //deducte resources

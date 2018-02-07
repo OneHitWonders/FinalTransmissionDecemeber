@@ -32,7 +32,7 @@ public class BaseEvents : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        daytime = gameObject.GetComponent<DayTime>();
+        daytime = GameObject.FindGameObjectWithTag("GameController").GetComponent<DayTime>();
 	}
 	
 	// Update is called once per frame
