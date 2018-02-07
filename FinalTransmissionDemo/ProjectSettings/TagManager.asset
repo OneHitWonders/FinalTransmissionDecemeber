@@ -11,6 +11,9 @@ TagManager:
   - MinimapCamera
   - SceneController
   - House
+  - BulletinBoard
+  - DayText
+  - HourText
   layers:
   - Default
   - TransparentFX

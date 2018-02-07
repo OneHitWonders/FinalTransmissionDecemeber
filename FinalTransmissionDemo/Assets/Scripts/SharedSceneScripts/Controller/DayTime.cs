@@ -29,7 +29,6 @@ public class DayTime : MonoBehaviour {
     private string ampm = "PM";
     public float timeChange = 30; //  seconds before hour changes
 
-    public Text timeText;
 
     public bool baseAttack = false;
     public bool baseTrader = false;
@@ -38,6 +37,10 @@ public class DayTime : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //      timeText.text = "Day: " + day.ToString() + "  " + hour.ToString() + " " + ampm;
+        DayText = GameObject.FindGameObjectWithTag("DayText").GetComponent<Text>();
+        HourText = GameObject.FindGameObjectWithTag("HourText").GetComponent<Text>();
+
+
         DayText.text = "Day: " + day.ToString();
         HourText.text = hour.ToString() +ampm;
         currentScene = SceneManager.GetActiveScene();

@@ -13,12 +13,13 @@ public class SurvivorController : MonoBehaviour {
     private Survivor SurvivorDetails;
     private string IsWalking;
 
-
+    //for creating a new survivor
     [SerializeField]
     private GameObject survivorPrefabTemp;
     [SerializeField]
     private GameObject spawnPoint;
 
+    //for minimap
     [SerializeField]
     private Camera minimapCamera;
 
@@ -43,13 +44,15 @@ public class SurvivorController : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-
+        DontDestroyOnLoad(gameObject);
        
         
 	}
 
     void Start()
     {
+
+
         anim = GetComponent<Animator>();
 
         // will rotate in relation to the camera's y axis, used to rotate player
@@ -75,6 +78,10 @@ public class SurvivorController : MonoBehaviour {
             }
 
         }
+        //sets minimap Camera
+        minimapCamera = GameObject.FindGameObjectWithTag("MinimapCamera").GetComponent<Camera>();
+
+
     }
 
 

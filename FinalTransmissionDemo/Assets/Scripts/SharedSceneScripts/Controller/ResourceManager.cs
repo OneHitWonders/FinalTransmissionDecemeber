@@ -52,4 +52,10 @@ public class ResourceManager : MonoBehaviour {
     void Update () {
 		
 	}
+
+
+
+
+
+
 }

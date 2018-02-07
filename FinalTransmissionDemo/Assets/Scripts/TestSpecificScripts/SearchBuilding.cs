@@ -24,9 +24,9 @@ public class SearchBuilding : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        survController = GameObject.FindGameObjectWithTag("SceneController").GetComponent<SurvivorController>();
-        dayTime = GameObject.FindGameObjectWithTag("SceneController").GetComponent<DayTime>();
-        resourceCollector = GameObject.FindGameObjectWithTag("SceneController").GetComponent<ResourceCollector>();
+        survController = GameObject.FindGameObjectWithTag("GameController").GetComponent<SurvivorController>();
+        dayTime = GameObject.FindGameObjectWithTag("GameController").GetComponent<DayTime>();
+        resourceCollector = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResourceCollector>();
 
 
 
