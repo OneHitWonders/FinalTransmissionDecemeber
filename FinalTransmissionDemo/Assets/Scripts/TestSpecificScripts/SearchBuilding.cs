@@ -10,7 +10,7 @@ public class SearchBuilding : MonoBehaviour {
     private GameObject survivorOutside;
 
     [SerializeField]
-    private int BuildingSize =1 ;
+    private float BuildingSize =1 ;
 
 
     //Variables for Searching

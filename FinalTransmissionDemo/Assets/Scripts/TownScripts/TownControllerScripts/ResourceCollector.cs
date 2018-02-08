@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ResourceCollector : MonoBehaviour {
 
-    public int foodCollected;
-    public int waterCollected;
-    public int woodCollected;
-    public int metalCollected;
-    public int medsCollected;
-    public int ammoCollected;
-    public int moneyCollected;
+    public float foodCollected;
+    public float waterCollected;
+    public float woodCollected;
+    public float metalCollected;
+    public float medsCollected;
+    public float ammoCollected;
+    public float moneyCollected;
 
 
 

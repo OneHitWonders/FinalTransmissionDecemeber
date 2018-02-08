@@ -776,7 +776,6 @@ MonoBehaviour:
   day: 1
   hour: 12
   timeChange: 30
-  timeText: {fileID: 0}
   baseAttack: 0
   baseTrader: 0
 --- !u!114 &267251610
@@ -4340,6 +4339,14 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485069373176904, guid: 661b91ee949e6f040971b4b562a6f76c, type: 2}
+      propertyPath: m_TagString
+      value: DayText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1519671136396102, guid: 661b91ee949e6f040971b4b562a6f76c, type: 2}
+      propertyPath: m_TagString
+      value: HourText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 661b91ee949e6f040971b4b562a6f76c, type: 2}
