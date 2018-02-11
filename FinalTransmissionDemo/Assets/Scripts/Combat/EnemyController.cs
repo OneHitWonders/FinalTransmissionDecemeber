@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public class EnemyController : MonoBehaviour
+{
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -28,18 +29,33 @@ public class EnemyController : MonoBehaviour {
 
         if (distance < range)
         {
-
-            if (canMove)
-                mover.MoveTo(ObjectToMoveTo);
-
-            if (shotCount <= 0f)
+            if (distance < 50)
             {
-                Fire();
-                shotCount = 10f / shotRate;
-               // mover.Stop();
+                mover.speed = 0f;
+                transform.LookAt(target);
+
+                if (shotCount <= 0f)
+                {
+
+                    Fire();
+                    shotCount = 10f / shotRate;
+                }
+
+                shotCount -= Time.deltaTime;
             }
 
-            shotCount -= Time.deltaTime;
+            else if (distance > 50)
+            {
+                mover.speed = 15f;
+                mover.MoveTo(ObjectToMoveTo);
+            }
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+
+
         }
 
     }
@@ -51,6 +67,11 @@ public class EnemyController : MonoBehaviour {
             mover.Stop();
             canMove = false;
             health = health - (Random.Range(3, 6));
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
         else if (other.gameObject.tag == "Node")
         {
@@ -79,6 +100,7 @@ public class EnemyController : MonoBehaviour {
         if (collision.gameObject.tag == "Survivor")
         {
             canMove = true;
+            Update();
         }
     }
 

@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMelee : MonoBehaviour {
+public class EnemyMelee : MonoBehaviour
+{
 
     public GameObject ObjectToMoveTo;
     private Mover mover;
     bool canMove = true;
     public Transform target;
     public float range;
-    float distance;
+    public float distance;
     public int health = 100;
+    public float speed = 5.0f;
 
     void Start()
     {
-        mover = GetComponent<Mover>();
+        mover = gameObject.GetComponent<Mover>();
     }
 
     void Update()
@@ -23,10 +25,9 @@ public class EnemyMelee : MonoBehaviour {
         distance = Vector3.Distance(transform.position, target.position);
 
         if (distance < range)
-        {
+
             if (canMove)
                 mover.MoveTo(ObjectToMoveTo);
-        }
 
     }
 
@@ -34,20 +35,12 @@ public class EnemyMelee : MonoBehaviour {
     {
         if (other.gameObject.tag == "Survivor")
         {
-            mover.Stop();
-            canMove = false;
             health = health - (Random.Range(12, 18));
-        }
-        else if (other.gameObject.tag == "Node")
-        {
-            var node = other.gameObject.GetComponent<PathNode>();
 
-            if (node.NextNode != null)
+            if (health <= 0)
             {
-                ObjectToMoveTo = node.NextNode.gameObject;
+                Destroy(gameObject);
             }
-            else
-                canMove = false;
         }
 
         if (other.gameObject.tag == "Bullet")
@@ -65,6 +58,7 @@ public class EnemyMelee : MonoBehaviour {
         if (collision.gameObject.tag == "Survivor")
         {
             canMove = true;
+
         }
     }
 }

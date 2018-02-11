@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPatrolAI : MonoBehaviour {
+public class EnemyPatrolAI : MonoBehaviour
+{
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -31,11 +32,12 @@ public class EnemyPatrolAI : MonoBehaviour {
 
         if (distance < range)
         {
+            transform.LookAt(target);
+            mover.Stop();
             if (shotCount <= 0f)
             {
-                Fire();
                 shotCount = 10f / shotRate;
-                mover.Stop();
+                Fire();
             }
 
             shotCount -= Time.deltaTime;
@@ -50,6 +52,11 @@ public class EnemyPatrolAI : MonoBehaviour {
             mover.Stop();
             canMove = false;
             health = health - (Random.Range(3, 6));
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
         else if (other.gameObject.tag == "Node")
         {
@@ -65,11 +72,12 @@ public class EnemyPatrolAI : MonoBehaviour {
 
         if (other.gameObject.tag == "Bullet")
         {
+            Destroy(other);
             health = health - 50;
-            if(health == 0)
+            if (health == 0)
             {
                 Destroy(gameObject);
-            }       
+            }
         }
     }
 

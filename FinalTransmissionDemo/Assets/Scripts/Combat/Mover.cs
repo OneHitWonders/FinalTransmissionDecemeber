@@ -2,15 +2,17 @@
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class Mover : MonoBehaviour {
+public class Mover : MonoBehaviour
+{
 
     private NavMeshAgent agent;
+    public float speed = 15.0f;
 
 
-	void Start ()
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-	}
+    }
 
     public void MoveTo(Vector3 position)
     {
@@ -19,12 +21,14 @@ public class Mover : MonoBehaviour {
 
     public void MoveTo(GameObject target)
     {
-        MoveTo(target.transform.position);
+        Vector3 movement = transform.forward * speed * Time.deltaTime;
+        MoveTo(target.transform.position + movement);
     }
 
     public void Stop()
     {
         agent.isStopped = true;
     }
-	
+
 }
+
